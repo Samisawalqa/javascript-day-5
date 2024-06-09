@@ -64,10 +64,36 @@ document.querySelector("#okok").addEventListener("click", function () {
 
 //////
 
-let firstInput = document.querySelector('#input1').value
-let secondInput = document.querySelector('#input2').value
-document.querySelector
+let firstInput = document.querySelector('#input1')
+let secondInput = document.querySelector('#input2')
 document.querySelector("#form2").addEventListener('submit', function () {
-    alert('wrong input')
+    if (firstInput.value != secondInput.value) {
+        alert('wrong input')
+    }
 })
 
+/////
+
+document.querySelector('img').addEventListener('click', function () {
+    this.setAttribute('src', 'https://cdn.theatlantic.com/thumbor/d8lh_KAZuOgBYslMOP4T0iu9Fks=/0x62:2000x1187/1600x900/media/img/mt/2018/03/AP_325360162607/original.jpg')
+})
+
+////
+
+document.querySelector(".check").addEventListener('click', function () {
+    let info = document.querySelector(".pass").attributes.getNamedItem('type').value
+    if (info == 'password') {
+        document.querySelector(".pass").setAttribute('type', 'text')
+    } else {
+        document.querySelector(".pass").setAttribute('type', 'password')
+    }
+})
+
+
+
+////
+
+let newColor = document.querySelector(".newbg")
+document.querySelector(".changeBG").addEventListener('click', function () {
+    document.querySelector(".divBG").style.backgroundColor = newColor.value;
+})
